@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #414943;
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-outline: #717973;
+  --color-outline-variant: #c0c9c1;
+  --color-surface-tint: #3b6750;
+  --color-primary: #14422d;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2d5a43;
+  --color-on-primary-container: #80ae93;
+  --color-inverse-primary: #a1d1b4;
+  --color-secondary: #4c6455;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #cbe6d3;
+  --color-on-secondary-container: #506859;
+  --color-tertiary: #41171b;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-background: #f9f9f9;
+  --color-on-background: #1a1c1c;
+  --color-surface-variant: #e2e2e2;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Hanken Grotesk", sans-serif;
+  --font-mono: "Geist", "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in.fade-in {
+  animation: fadeIn 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media print {
+  /* Hide the entire standard viewport elements */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Make the printable statement and its descendants visible */
+  #printable-statement-area,
+  #printable-statement-area * {
+    visibility: visible;
+  }
+  
+  /* Position statement perfectly at top-left to print without extra spacing */
+  #printable-statement-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Adjust page margins */
+  @page {
+    size: auto;
+    margin: 15mm;
+  }
+}
