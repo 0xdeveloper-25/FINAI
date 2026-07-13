@@ -42,7 +42,10 @@ export default function MetricCard({ user, transactions }: MetricCardProps) {
       isPositive = true;
     }
   } else {
-    const pct = ((combinedBalance - lastMonthCombinedBalance) / lastMonthCombinedBalance) * 100;
+    let pct = ((combinedBalance - lastMonthCombinedBalance) / lastMonthCombinedBalance) * 100;
+    if (pct < -100) {
+      pct = -100;
+    }
     isPositive = pct >= 0;
     const formattedPct = Math.abs(pct) % 1 === 0 ? Math.abs(pct).toFixed(0) : Math.abs(pct).toFixed(1);
     pctText = `${pct >= 0 ? '+' : '-'}${formattedPct}%`;
