@@ -489,14 +489,6 @@ export default function ProfileTab({ user, onUpdateProfile, searchQuery }: Profi
 
       {/* SECTION 5: FOOTER ACTIONS */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-8 border-t border-slate-200/80 gap-4 mt-4">
-        <button
-          type="button"
-          id="btn-trigger-deactivate-account"
-          onClick={() => setIsDeactivateModalOpen(true)}
-          className="text-xs font-black text-rose-600 hover:text-rose-700 tracking-wider uppercase cursor-pointer text-left self-start sm:self-center py-2.5"
-        >
-          Delete Account
-        </button>
 
         <div className="flex items-center gap-3">
           <AnimatePresence>
