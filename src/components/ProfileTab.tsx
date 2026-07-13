@@ -450,43 +450,6 @@ export default function ProfileTab({ user, onUpdateProfile, searchQuery }: Profi
         </div>
       )}
 
-      {/* SECTION 2: SECURITY */}
-      {(matchesSearch('Change Password') || matchesSearch('Security')) && (
-        <div className="flex flex-col gap-3">
-          <div>
-            <h2 id="heading-security" className="font-display text-lg font-bold text-slate-800 tracking-tight">
-              Security
-            </h2>
-            <p className="text-xs text-slate-500 font-medium mt-1">
-              Protect your financial data with advanced authentication.
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200/80 rounded-[20px] p-6 shadow-xs flex flex-col gap-5">
-            {/* Change Password */}
-            {matchesSearch('Change Password') && (
-              <button
-                type="button"
-                id="btn-trigger-change-password"
-                onClick={() => setIsPasswordModalOpen(true)}
-                className="flex items-center justify-between text-left w-full hover:bg-slate-50/70 p-3 -m-3 rounded-2xl transition-all cursor-pointer group"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
-                    <Lock className="w-5 h-5 text-slate-500" />
-                  </div>
-                  <div>
-                    <span className="font-bold text-slate-900 text-sm block group-hover:text-slate-900 transition-colors">Change Password</span>
-                    <span className="text-xs text-slate-500 font-medium">Update your security credentials regularly.</span>
-                  </div>
-                </div>
-                <ChevronRight className="w-5 h-5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            )}
-          </div>
-        </div>
-      )}
-
       {/* SECTION 5: FOOTER ACTIONS */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-8 border-t border-slate-200/80 gap-4 mt-4">
 
